@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*.pyo
+
+.venv/
+venv/
+
+.vscode/
+
+output/
+
+~$*.xlsx
+
+.DS_Store
