@@ -1,0 +1,58 @@
+ct_daily:
+
+  checkup:
+    type: functional
+
+  gantry_moving_laser_alignment:
+    display: Gantry / Moving Laser Alignment
+    nominal: 0
+    tolerance: 2
+    unit: mm
+
+  moving_laser_scan_plane_alignment:
+    display: Moving Laser / Scan Plane Alignment
+    nominal: 0
+    tolerance: 2
+    unit: mm
+
+  spatial_integrity:
+    display: Spatial Integrity
+    nominal: 199
+    tolerance: 1
+    unit: mm
+
+  hu_water:
+    display: HU Water
+    nominal: 0
+    tolerance: 5
+    unit: HU
+
+  sd_water:
+    display: SD Water
+    nominal: 4
+    tolerance: 1
+    unit: HU
+
+  hu_air:
+    display: HU Air
+    nominal: -1000
+    tolerance: 5
+    unit: HU
+
+  sd_air:
+    display: SD Air
+    nominal: 2
+    tolerance: 1
+    unit: HU
+
+  sentinel_isocheck:
+    display: Sentinel IsoCheck
+    nominal: 0
+    tolerance: 1
+    unit: mm
+
+  couch_profile_deviation:
+    display: Couch Profile Deviation
+    nominal: 0
+    tolerance: 1
+    unit: mm

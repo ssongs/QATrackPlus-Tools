@@ -1,0 +1,8 @@
+hospital:
+  name: Soonchunhyang University Seoul Hospital
+
+machines:
+  ct_go_sim:
+    manufacturer: Siemens
+    model: SOMATOM go.Sim
+    display_name: CT-go.Sim
