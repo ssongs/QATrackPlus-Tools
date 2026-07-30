@@ -15,9 +15,11 @@ class QATest:
 
     unit: str = ""
 
+    tolerance: Optional[float] = None
+
     reference: Optional[float] = None
 
-    tolerance: Optional[float] = None
+    baseline: Optional[float] = None
 
     trend: bool = False
 
@@ -28,7 +30,12 @@ class QATest:
         if self.test_type == "boolean":
             return bool(self.result)
 
-        if self.reference is None or self.tolerance is None:
+        if self.tolerance is None:
             return False
 
-        return abs(float(self.result) - self.reference) <= self.tolerance
+        target = self.baseline if self.baseline is not None else self.reference
+
+        if target is None:
+            return False
+
+        return abs(float(self.result) - target) <= self.tolerance
