@@ -21,11 +21,20 @@ def load_protocol(path: str | Path) -> Protocol:
                 TestDefinition(
                     key=test["key"],
                     name=test["name"],
+                    description=test.get("description") or "",
                     type=test["type"],
                     unit=test.get("unit", ""),
-                    reference=test.get("reference"),
+
                     tolerance=test.get("tolerance"),
-                    history=test.get("history", False),
+                    tolerance_source=test.get("tolerance_source"),
+
+                    reference=test.get("reference"),
+                    reference_source=test.get("reference_source"),
+
+                    baseline=test.get("baseline"),
+                    baseline_source=test.get("baseline_source"),
+
+                    trend=test.get("trend", False),
                 )
             )
 
@@ -41,5 +50,8 @@ def load_protocol(path: str | Path) -> Protocol:
         name=data["name"],
         category=data["category"],
         protocol=data["protocol"],
+        machine=data["machine"],
+        frequency=data["frequency"],
+        guideline=data["guideline"],
         sections=sections,
     )

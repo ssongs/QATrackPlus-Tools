@@ -8,13 +8,16 @@ class TestDefinition:
 
     key: str
     name: str
+    description: str
     type: str
-
     unit: str = ""
 
     tolerance: Optional[float] = None
+    tolerance_source: Optional[str] = None
     reference: Optional[float] = None
+    reference_source: Optional[str] = None
     baseline: Optional[float] = None
+    baseline_source: Optional[str] = None
 
     trend: bool = False
 
@@ -35,5 +38,9 @@ class Protocol:
     name: str
     category: str
     protocol: str
+
+    machine: dict
+    frequency: str
+    guideline: list[str]
 
     sections: list[Section] = field(default_factory=list)

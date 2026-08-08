@@ -2,7 +2,7 @@ from src.protocol.loader import load_protocol
 from src.builders.record_builder import build_record
 
 protocol = load_protocol(
-    "config/protocols/ct/siemens_go_sim.yaml"
+    "config/protocols/ct/siemens_go_sim_daily.yaml"
 )
 
 results = {

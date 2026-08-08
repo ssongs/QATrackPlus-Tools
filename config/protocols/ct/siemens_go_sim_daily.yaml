@@ -1,6 +1,19 @@
-name: Siemens SOMATOM go.Sim
+name: Siemens SOMATOM go.Sim Daily QA
 category: CT
 protocol: CT Daily QA
+
+machine:
+  vendor: Siemens
+  model: SOMATOM go.Sim
+
+frequency: daily
+
+guideline:
+  - AAPM TG-66
+  - Sentinel Service Manual
+
+phantom:
+  name:Catphan 503
 
 sections:
 
@@ -11,57 +24,85 @@ sections:
 
       - key: gantry_moving_laser_alignment
         name: Gantry / Moving Laser Alignment
+        description:
         type: boolean
+        unit: mm
+        tolerance: 1
+        tolerance_source: AAPM TG-66
         trend: false
 
       - key: moving_laser_scan_plane_alignment
         name: Moving Laser / Scan Plane Alignment
+        description:
         type: boolean
+        unit: mm
+        tolerance: 1
+        tolerance_source: AAPM TG-66
         trend: false
 
       - key: spatial_integrity
         name: Spatial Integrity (distance)
+        description: Distance between phantom markers
         type: numeric
         unit: mm
         tolerance: 1
+        tolerance_source: AAPM TG-66
         reference: 200
+        reference_source: Manufacturer specification
         baseline: 199.3
+        baseline_source: Acceptance test
         trend: true
 
       - key: hu_water
         name: CT Number Accuracy of Water
+        description: CT Number Accuracy of Water
         type: numeric
         unit: HU
         tolerance: 5
+        tolerance_source: AAPM TG-66
         reference: 0
+        reference_source:
         baseline: 0
+        baseline_source:
         trend: true
 
       - key: hu_air
         name: CT Number Accuracy of Air
+        description: CT Number Accuracy of Air
         type: numeric
         unit: HU
         tolerance: 5
+        tolerance_source: AAPM TG-66
         reference: -1000
+        reference_source:
         baseline: -1000
+        baseline_source: Acceptance test
         trend: true
 
       - key: noise_water
         name: Image Noise of Water
+        description: Image Noise(Standard Deviation) of Water
         type: numeric
         unit: HU
         tolerance: 1
+        tolerance_source: AAPM TG-66
         reference: 4
+        reference_source:
         baseline: 4
+        baseline_source: Acceptance test
         trend: true
 
       - key: noise_air
         name: Image Noise of Air
+        description: Image Noise(Standard Deviation) of Air
         type: numeric
         unit: HU
         tolerance: 1
+        tolerance_source: AAPM TG-66
         reference: 2
+        reference_source:
         baseline: 2
+        baseline_source: Acceptance test
         trend: true
 
   - key: sentinel_daily
@@ -71,14 +112,19 @@ sections:
 
       - key: sentinel_isocenter_check
         name: Sentinel Isocenter Check
+        description: Sentinel phantom Isosenter Check
         type: boolean
         trend: false
 
       - key: couch_profile_deviation
         name: Couch Profile Deviation
+        description: 
         type: numeric
         unit: mm
         tolerance: 3
+        tolerance_source: Sentinel
         reference: 0
-        baseline: 0
+        reference_source: Sentinel
+        baseline: 0.3
+        baseline_source: Acceptance test
         trend: true
