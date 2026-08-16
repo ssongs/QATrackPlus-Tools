@@ -22,12 +22,16 @@ def build_record(
     for section in protocol.sections:
         for test in section.tests:
 
+            result_data = results.get(test.key, {})
+
             record.add_test(
                 QATest(
                     key=test.key,
                     name=test.name,
                     test_type=test.type,
-                    result=results.get(test.key),
+                    result=result_data.get("result"),
+                    skipped=result_data.get("skipped", False),
+                    comment=result_data.get("comment", ""),
                     unit=test.unit,
                     tolerance=test.tolerance,
                     reference=test.reference,

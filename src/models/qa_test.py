@@ -13,6 +13,9 @@ class QATest:
 
     result: bool | float | None
 
+    skipped: bool = False
+    comment: str=""
+
     unit: str = ""
 
     tolerance: Optional[float] = None
@@ -23,6 +26,9 @@ class QATest:
     @property
     def passed(self) -> bool:
         """Return True if the test passes."""
+
+        if self.skipped:
+            return False
 
         if self.result is None:
             return False
