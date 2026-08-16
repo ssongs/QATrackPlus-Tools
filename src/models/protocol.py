@@ -16,8 +16,6 @@ class TestDefinition:
     tolerance_source: Optional[str] = None
     reference: Optional[float] = None
     reference_source: Optional[str] = None
-    baseline: Optional[float] = None
-    baseline_source: Optional[str] = None
 
     trend: bool = False
 

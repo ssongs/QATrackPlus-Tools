@@ -31,9 +31,6 @@ def load_protocol(path: str | Path) -> Protocol:
                     reference=test.get("reference"),
                     reference_source=test.get("reference_source"),
 
-                    baseline=test.get("baseline"),
-                    baseline_source=test.get("baseline_source"),
-
                     trend=test.get("trend", False),
                 )
             )

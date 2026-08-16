@@ -11,15 +11,12 @@ class QATest:
 
     test_type: str  # "boolean" or "numeric"
 
-    result: bool | float
+    result: bool | float | None
 
     unit: str = ""
 
     tolerance: Optional[float] = None
-
     reference: Optional[float] = None
-
-    baseline: Optional[float] = None
 
     trend: bool = False
 
@@ -27,15 +24,16 @@ class QATest:
     def passed(self) -> bool:
         """Return True if the test passes."""
 
+        if self.result is None:
+            return False
+
         if self.test_type == "boolean":
             return bool(self.result)
 
         if self.tolerance is None:
             return False
 
-        target = self.baseline if self.baseline is not None else self.reference
-
-        if target is None:
+        if self.reference is None:
             return False
 
-        return abs(float(self.result) - target) <= self.tolerance
+        return abs(float(self.result) - self.reference) <= self.tolerance

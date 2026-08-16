@@ -31,7 +31,6 @@ def build_record(
                     unit=test.unit,
                     tolerance=test.tolerance,
                     reference=test.reference,
-                    baseline=test.baseline,
                     trend=test.trend,
                 )
             )

@@ -45,12 +45,10 @@ sections:
         description: Distance between phantom markers
         type: numeric
         unit: mm
-        tolerance: 1
+        reference: 199.3
+        reference_source: Acceptance test        
+        tolerance: 2
         tolerance_source: AAPM TG-66
-        reference: 200
-        reference_source: Manufacturer specification
-        baseline: 199.3
-        baseline_source: Acceptance test
         trend: true
 
       - key: hu_water
@@ -58,12 +56,10 @@ sections:
         description: CT Number Accuracy of Water
         type: numeric
         unit: HU
+        reference: 0
+        reference_source: Acceptance test        
         tolerance: 5
         tolerance_source: AAPM TG-66
-        reference: 0
-        reference_source:
-        baseline: 0
-        baseline_source:
         trend: true
 
       - key: hu_air
@@ -71,12 +67,10 @@ sections:
         description: CT Number Accuracy of Air
         type: numeric
         unit: HU
+        reference: -1000
+        reference_source: Acceptance test        
         tolerance: 5
         tolerance_source: AAPM TG-66
-        reference: -1000
-        reference_source:
-        baseline: -1000
-        baseline_source: Acceptance test
         trend: true
 
       - key: noise_water
@@ -84,12 +78,10 @@ sections:
         description: Image Noise(Standard Deviation) of Water
         type: numeric
         unit: HU
+        reference: 4
+        reference_source: Acceptance test        
         tolerance: 1
         tolerance_source: AAPM TG-66
-        reference: 4
-        reference_source:
-        baseline: 4
-        baseline_source: Acceptance test
         trend: true
 
       - key: noise_air
@@ -97,12 +89,10 @@ sections:
         description: Image Noise(Standard Deviation) of Air
         type: numeric
         unit: HU
+        reference: 2
+        reference_source: Acceptance test
         tolerance: 1
         tolerance_source: AAPM TG-66
-        reference: 2
-        reference_source:
-        baseline: 2
-        baseline_source: Acceptance test
         trend: true
 
   - key: sentinel_daily
@@ -121,10 +111,8 @@ sections:
         description: 
         type: numeric
         unit: mm
-        tolerance: 3
-        tolerance_source: Sentinel
         reference: 0
         reference_source: Sentinel
-        baseline: 0.3
-        baseline_source: Acceptance test
+        tolerance: 3
+        tolerance_source: Sentinel
         trend: true
