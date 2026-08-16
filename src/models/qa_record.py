@@ -1,5 +1,4 @@
 from dataclasses import dataclass, field
-from datetime import date
 
 from src.models.qa_test import QATest
 
@@ -10,8 +9,6 @@ class QARecord:
 
     machine: str
     protocol: str
-    performed_date: date
-
     tests: list[QATest] = field(default_factory=list)
 
     def add_test(self, test: QATest) -> None:

@@ -40,5 +40,6 @@ class Protocol:
     machine: dict
     frequency: str
     guideline: list[str]
+    phantom: dict
 
     sections: list[Section] = field(default_factory=list)

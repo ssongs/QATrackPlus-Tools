@@ -50,5 +50,6 @@ def load_protocol(path: str | Path) -> Protocol:
         machine=data["machine"],
         frequency=data["frequency"],
         guideline=data["guideline"],
+        phantom=data.get("phantom", {}),
         sections=sections,
     )
