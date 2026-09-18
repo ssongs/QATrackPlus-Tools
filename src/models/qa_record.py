@@ -9,6 +9,8 @@ class QARecord:
 
     machine: str
     protocol: str
+    performed_date: str
+    performer: str
     tests: list[QATest] = field(default_factory=list)
 
     def add_test(self, test: QATest) -> None:

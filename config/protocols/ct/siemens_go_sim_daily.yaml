@@ -22,7 +22,7 @@ sections:
 
     tests:
 
-      - key: gantry_moving_laser_alignment
+      - key: ct_daily_laser_gantry_moving
         name: Gantry / Moving Laser Alignment
         description:
         type: boolean
@@ -31,7 +31,7 @@ sections:
         tolerance_source: AAPM TG-66
         trend: false
 
-      - key: moving_laser_scan_plane_alignment
+      - key: ct_daily_laser_moving_scan_plane
         name: Moving Laser / Scan Plane Alignment
         description:
         type: boolean
@@ -40,51 +40,51 @@ sections:
         tolerance_source: AAPM TG-66
         trend: false
 
-      - key: spatial_integrity
+      - key: ct_daily_spatial_integrity
         name: Spatial Integrity (distance)
         description: Distance between phantom markers
         type: numeric
         unit: mm
-        reference: 199.3
-        reference_source: Acceptance test        
+        reference: 199.0
+        reference_source: Acceptance test
         tolerance: 2
         tolerance_source: AAPM TG-66
         trend: true
 
-      - key: hu_water
+      - key: ct_daily_hu_water
         name: CT Number Accuracy of Water
         description: CT Number Accuracy of Water
         type: numeric
         unit: HU
         reference: 0
-        reference_source: Acceptance test        
+        reference_source: Acceptance test
         tolerance: 5
         tolerance_source: AAPM TG-66
         trend: true
 
-      - key: hu_air
+      - key: ct_daily_hu_air
         name: CT Number Accuracy of Air
         description: CT Number Accuracy of Air
         type: numeric
         unit: HU
         reference: -1000
-        reference_source: Acceptance test        
+        reference_source: Acceptance test
         tolerance: 5
         tolerance_source: AAPM TG-66
         trend: true
 
-      - key: noise_water
+      - key: ct_daily_sd_water
         name: Image Noise of Water
         description: Image Noise(Standard Deviation) of Water
         type: numeric
         unit: HU
         reference: 4
-        reference_source: Acceptance test        
+        reference_source: Acceptance test
         tolerance: 1
         tolerance_source: AAPM TG-66
         trend: true
 
-      - key: noise_air
+      - key: ct_daily_sd_air
         name: Image Noise of Air
         description: Image Noise(Standard Deviation) of Air
         type: numeric
@@ -100,19 +100,19 @@ sections:
 
     tests:
 
-      - key: sentinel_isocenter_check
+      - key: sentinel_daily_isochk
         name: Sentinel Isocenter Check
         description: Sentinel phantom Isosenter Check
         type: boolean
         trend: false
 
-      - key: couch_profile_deviation
+      - key: sentinel_couch_profile
         name: Couch Profile Deviation
-        description: 
+        description:
         type: numeric
         unit: mm
         reference: 0
         reference_source: Sentinel
-        tolerance: 3
+        tolerance: 2
         tolerance_source: Sentinel
         trend: true
